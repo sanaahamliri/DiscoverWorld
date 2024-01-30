@@ -9,16 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('aventures', function (Blueprint $table) {
-            $table->idAventure();
+            $table->id();
             $table->string('description');
             $table->string('photos');
             $table->string('conseils');
-            $table->int('date');
-            $table->foreignId('idDestination')->constrained('destinations');
-            $table->foreignId('idUser')->constrained('users');
+            $table->integer('date'); 
+            $table->foreignId('destination_id')->constrained('destinations'); 
+            $table->foreignId('user_id')->constrained('users'); 
             $table->rememberToken();
             $table->timestamps();
         });
