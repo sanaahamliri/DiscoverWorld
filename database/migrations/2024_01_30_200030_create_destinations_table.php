@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('aventures', function (Blueprint $table) {
             $table->id();
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users'); 
             $table->rememberToken();
             $table->timestamps();
-        });
+        });               
     }
 
     /**
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('aventures');
+        Schema::dropIfExists('destinations');
     }
 };
