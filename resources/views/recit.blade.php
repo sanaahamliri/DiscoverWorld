@@ -24,16 +24,29 @@
                         </h3>
                     </div>
                     <!-- Modal body -->
+                    @if(Session::get('success'))
+                    <div class="alert alert-succes">
+                        {{Session::get('success')}}
+                    </div>
+                    @endif
+
+                    @if(Session::get('fail'))
+                    <div class="alert alert-danger">
+                        {{Session::get('fail')}}
+                    </div>
+                    @endif
                     <form action="add" class="p-4 md:p-5" method="post">
                         @csrf
                         <div class="grid gap-4 mb-4 grid-cols-2">
                             <div class="col-span-2">
                                 <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
-                                <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ecrire le contenu de la aven"></textarea>
+                                <textarea id="description" name="description" value="{{old('description')}}" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ecrire le contenu de la aven"></textarea>
+                                <span style="color: red">@error ('description') {{ $message }} @enderror</span>
                             </div>
                             <div class="col-span-2">
                                 <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Conseils</label>
-                                <textarea id="description" name="conseils" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ecrire le contenu de la aven"></textarea>
+                                <textarea id="description" name="conseils" value="{{old('conseils')}}" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ecrire le contenu de la aven"></textarea>
+                                <span style="color: red">@error ('conseils') {{ $message }} @enderror</span>
                             </div>
 
 
@@ -46,7 +59,9 @@
                                         <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                                         <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                                     </div>
-                                    <input id="dropzone-file" type="file" multiple="multiple" name="photos" class="hidden" />
+                                    <input id="dropzone-file" type="file" multiple="multiple" name="photos" value="{{old('photos')}}" class="hidden" />
+                                    <span style="color: red">@error ('photos') {{ $message }} @enderror</span>
+
                                 </label>
                             </div>
 
@@ -55,7 +70,7 @@
                         </div>
                         <button type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
                             <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                                Purple to pink
+                                Add
                             </span>
                         </button>
                     </form>
