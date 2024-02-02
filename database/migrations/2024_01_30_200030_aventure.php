@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('conseils');
             $table->integer('date'); 
             $table->foreignId('destination_id')->constrained('destinations'); 
-            $table->foreignId('user_id')->constrained('users'); 
-            $table->rememberToken();
+            // $table->foreignId('user_id')->constrained('users'); 
+            // $table->rememberToken();
             $table->timestamps();
         });               
     }

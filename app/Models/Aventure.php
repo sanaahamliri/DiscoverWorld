@@ -22,4 +22,13 @@ class Aventure extends Model
         'date',
     ];
 
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
+
+
+    public function Destination(){
+        return $this->belongsTo(Destination::class);
+    }
+
 }

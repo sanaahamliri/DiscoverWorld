@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecitController;
+use App\Models\Destination;
+use App\Http\Controllers\DestinationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,11 +20,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/', [DestinationController::class, 'destinations']);
+
 
 Route::get('/recit', function () {
-    return view('recit');
-});
+    $destinations = Destination::all();
+    return view('recit',compact('destinations'));
 
+})->name('recit');
+
+Route::get('/statistique', function () {
+    return view('statistique');
+});
+ 
 Route::get('/recit', [RecitController::class, "Aventures"]);
 Route::post('add', [RecitController::class, "add"]);
 

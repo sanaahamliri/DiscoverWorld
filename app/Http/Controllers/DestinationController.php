@@ -10,10 +10,9 @@ use App\Models\Destination;
 class DestinationController extends Controller
 {
 
-//     public function destiantions()
-// {
-//     $destinations = destination::all();
-//     return view('welcome',compact($destinations));
-// }
-
+    public function destinations()
+    {
+        $destinations = destination::all();
+        return view('welcome', ['destinations'=>$destinations]);
+    }
 }

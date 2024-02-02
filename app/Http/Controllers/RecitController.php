@@ -10,7 +10,7 @@ class RecitController extends Controller
 {
     public function Aventures()
     {
-        return view('recit');
+        return view('/recit');
     }
 
     public function add(Request $request)
@@ -24,7 +24,11 @@ class RecitController extends Controller
     $query = DB::table('aventures')->insert([
         'description' => $request->input('description'),
         'conseils' => $request->input('conseils'),
-        'photos' => $request->input('photos')
+        'photos' => $request->input('photos'),
+        'id_destination' => $request->input('destination'),
+
+    
+
     ]);
 
     if($query){

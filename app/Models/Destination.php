@@ -9,14 +9,17 @@ class Destination extends Model
 {
     use HasFactory;
 
-    
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'DestiantionName',
+        'DestiantionName','id'
     ];
 
+    public function posts(){
+        return $this->hasMany(Aventure::class);
+    }
 }
