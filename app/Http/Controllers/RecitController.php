@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\DB;
 use App\Models\Destination;
+use App\Models\Aventure;
 
 class RecitController extends Controller
 {
@@ -14,7 +14,17 @@ class RecitController extends Controller
         return view(
             '/recit',
             [
-                "destinations" => destination::all()
+                "destinations" => Destination::all()
+            ]
+        );
+    }
+
+    public function show_Aventures()
+    {
+        return view(
+            'welcome',
+            [
+                "aventures" => Aventure::all()
             ]
         );
     }
@@ -24,21 +34,39 @@ class RecitController extends Controller
         $validatedData = $request->validate([
             'description' => 'required',
             'conseils' => 'required',
-            'photos' => 'required',
-            'destination' => 'required' // Add validation for the 'destination' field if necessary
+            'photos.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'destination' => 'required'
         ]);
 
-        $query = DB::table('aventures')->insert([
+        $pictures = [];
+
+        if ($request->hasFile('photos')) {
+            foreach ($request->file('photos') as $picture) {
+                $filename = time() . '_' . $picture->getClientOriginalName();
+                $path = $picture->storeAs('public/pictures', $filename);
+
+                $pictures[] = ['photos' => $path];
+            }
+        }
+
+        $aventure = Aventure::create([
             'description' => $request->input('description'),
             'conseils' => $request->input('conseils'),
-            'photos' => $request->input('photos'),
             'destination_id' => $request->input("destination"),
+            'photos' => json_encode($pictures),
         ]);
 
-        if ($query) {
-            return back()->with('success', 'Data have been successfully inserted');
+        if ($aventure) {
+            return back()->with('success', 'Data has been successfully inserted');
         } else {
             return back()->with('fail', 'Something went wrong');
         }
+    }
+
+
+    public function show()
+    {
+        $aventures = Aventure::all();
+        return view('welcome', ['aventures'=>$aventures]);
     }
 }

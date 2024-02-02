@@ -7,28 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Aventure extends Model
 {
-    use HasFactory;
+    protected $fillable = ['description', 'conseils', 'destination_id', 'photos'];
 
-    
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'description',
-        'photos',
-        'conseils',
-        'date',
-    ];
-
-    public function images(){
-        return $this->hasMany(Image::class);
-    }
-
-
-    public function Destination(){
+    public function destination()
+    {
         return $this->belongsTo(Destination::class);
     }
-
 }
+

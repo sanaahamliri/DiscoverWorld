@@ -980,7 +980,9 @@
                     <div class="rounded-lg bg-black opacity-80	 w-full h-full flex justify-center  items-center">
                         <div class='rounded-lg border-neutral-50 border-solid border-2 w-3/4 h-2/4 hover:border-none flex justify-center  items-center font-black text-xl hover:text-3xl ease-in duration-300	'>
                             <h1 class="text-white">
-                                Italie
+                            @foreach($aventures as $aventure)
+                            <p>{{ $aventure->description }}</p>
+                            @endforeach
                             </h1>
 
                         </div>

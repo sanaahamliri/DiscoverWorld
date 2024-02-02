@@ -73,13 +73,11 @@
                                         <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                                         <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                                     </div>
-                                    <input id="dropzone-file" type="file" multiple="multiple" name="photos" value="{{old('photos')}}" class="hidden" />
+                                    <input id="dropzone-file" type="file" multiple name="photos" value="{{old('photos')}}" class="hidden" />
                                     <span style="color: red">@error ('photos') {{ $message }} @enderror</span>
 
                                 </label>
                             </div>
-
-
 
                         </div>
                         <button type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
