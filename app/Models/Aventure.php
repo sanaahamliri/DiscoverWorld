@@ -13,5 +13,10 @@ class Aventure extends Model
     {
         return $this->belongsTo(Destination::class);
     }
+    
+    public function images()
+    {
+        return $this->hasMany(Image::class,'aventure_id');
+    }
 }
 

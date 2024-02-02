@@ -929,7 +929,7 @@
             </button>
         </a>
         <select class="inline-flex items-center px-4 py-2 ml-40 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-        <option selected>Filter according to your next adventure</option>
+            <option selected>Filter according to your next adventure</option>
             @foreach($destinations as $destination)
             <option value="{{ $destination->id }}">{{ $destination->DestinationName }}</option>
             @endforeach
@@ -973,50 +973,29 @@
             <p class="w-3/4 m-auto text-center mb-6 text-lg font-normal text-gray-500 lg:text-lg sm:px-16 xl:px-48">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem sint mollitia libero aperiam rem, repellat distinctio sed obcaecati quaerat et!</p>
 
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-4/5 m-auto my-5">
 
-            <a href="/recit">
-                <div class="rounded-lg h-60		 bg-gray-300 max-w-full  bg-[url('../uploads/')] ">
-                    <div class="rounded-lg bg-black opacity-80	 w-full h-full flex justify-center  items-center">
-                        <div class='rounded-lg border-neutral-50 border-solid border-2 w-3/4 h-2/4 hover:border-none flex justify-center  items-center font-black text-xl hover:text-3xl ease-in duration-300	'>
-                            <h1 class="text-white">
-                            @foreach($aventures as $aventure)
-                            <p>{{ $aventure->description }}</p>
-                            @endforeach
-                            </h1>
-
-                        </div>
-                    </div>
-                </div>
+        @foreach($aventures as $aventure)
+                            <p></p>
+                           
+        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+            <img src="{{asset('images/logoTravel.png')}}" class="rounded-t-lg h-16"  alt="Logo" />
             </a>
-
-            <a href="/recit">
-                <div class="rounded-lg h-60		 bg-gray-300 max-w-full  bg-[url('../uploads/')] ">
-                    <div class="rounded-lg bg-black opacity-80	 w-full h-full flex justify-center  items-center">
-                        <div class='rounded-lg border-neutral-50 border-solid border-2 w-3/4 h-2/4 hover:border-none flex justify-center  items-center font-black text-xl hover:text-3xl ease-in duration-300	'>
-                            <h1 class="text-white">
-                                France
-                            </h1>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a href="/recit">
-                <div class="rounded-lg h-60		 bg-gray-300 max-w-full  bg-[url('../uploads/')] ">
-                    <div class="rounded-lg bg-black opacity-80	 w-full h-full flex justify-center  items-center">
-                        <div class='rounded-lg border-neutral-50 border-solid border-2 w-3/4 h-2/4 hover:border-none flex justify-center  items-center font-black text-xl hover:text-3xl ease-in duration-300	'>
-                            <h1 class="text-white">
-                                Espagne
-                            </h1>
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $aventure->description }}</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $aventure->description }}</p>
+                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Read more
+                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+            </div>
         </div>
+        @endforeach
+
 
 
 

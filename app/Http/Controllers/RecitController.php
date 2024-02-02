@@ -24,7 +24,9 @@ class RecitController extends Controller
         return view(
             'welcome',
             [
-                "aventures" => Aventure::all()
+                "aventures" => Aventure::all(),
+                "destinations" => Destination::all()
+
             ]
         );
     }
@@ -34,26 +36,16 @@ class RecitController extends Controller
         $validatedData = $request->validate([
             'description' => 'required',
             'conseils' => 'required',
-            'photos.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'photos.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'destination' => 'required'
         ]);
 
-        $pictures = [];
-
-        if ($request->hasFile('photos')) {
-            foreach ($request->file('photos') as $picture) {
-                $filename = time() . '_' . $picture->getClientOriginalName();
-                $path = $picture->storeAs('public/pictures', $filename);
-
-                $pictures[] = ['photos' => $path];
-            }
-        }
+      
 
         $aventure = Aventure::create([
             'description' => $request->input('description'),
             'conseils' => $request->input('conseils'),
             'destination_id' => $request->input("destination"),
-            'photos' => json_encode($pictures),
         ]);
 
         if ($aventure) {
@@ -61,9 +53,21 @@ class RecitController extends Controller
         } else {
             return back()->with('fail', 'Something went wrong');
         }
+        if ($request->hasFile('pictures')) {
+            $pictures = [];
+        
+            foreach ($request->file('pictures') as $picture) {
+                // Use the original filename as the second parameter to storeAs
+                $path = $picture->storeAs('pictures', $picture->getClientOriginalName(), 'public');
+        
+                // $path now contains the relative path including the original filename
+                $pictures[] = ['picture' => $path];
+            }
+        
+            // Use createMany to insert multiple records
+            $aventure->images()->createMany($pictures);
+        }
     }
-
-
     public function show()
     {
         $aventures = Aventure::all();

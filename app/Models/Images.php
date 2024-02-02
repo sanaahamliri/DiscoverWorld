@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
-    protected $with =["post"];
+    protected $with =["aventures"];
 
     protected $fillable = ['photos', 'id'];
 
-    public function post(){
-        return $this->belongsTo(Aventure::class);
+    public function aventures(){
+        return $this->belongsTo(Aventure::class,'aventure_id');
     }
 }
