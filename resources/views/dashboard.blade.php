@@ -14,10 +14,10 @@
             </button>
         </a>
         <select class="inline-flex items-center px-4 py-2 ml-40 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-            <option value="">Filter according to your next adventure</option>
-            <option value="">ytrytryt</option>
-            <option value="">ytrytryt</option>
-            <option value="">ytrytryt</option>
+        <option selected>Filter according to your next adventure</option>
+            @foreach($destinations as $destination)
+            <option value="{{ $destination->id }}">{{ $destination->DestinationName }}</option>
+            @endforeach
 
         </select>
 

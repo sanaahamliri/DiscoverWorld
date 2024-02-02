@@ -23,16 +23,18 @@ Route::get('/', function () {
 Route::get('/', [DestinationController::class, 'destinations']);
 
 
-Route::get('/recit', function () {
-    $destinations = Destination::all();
-    return view('recit',compact('destinations'));
+// Route::get('/recit', function () {
+//     $destinations = Destination::all();
+//     return view('recit',compact('destinations'));
 
-})->name('recit');
+// })->name('recit');
+
+Route::get('/recit', [RecitController::class, 'Aventures'])->name('recit');
 
 Route::get('/statistique', function () {
     return view('statistique');
 });
- 
+
 Route::get('/recit', [RecitController::class, "Aventures"]);
 Route::post('add', [RecitController::class, "add"]);
 
