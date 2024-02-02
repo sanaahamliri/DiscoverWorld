@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('destinations', function (Blueprint $table) {
             $table->id();
             $table->string('DestinationName');
-            $table->rememberToken();
+            // $table->rememberToken();
             $table->timestamps();
         });
     }

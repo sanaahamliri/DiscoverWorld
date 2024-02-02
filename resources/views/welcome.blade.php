@@ -879,23 +879,23 @@
             <div class="relative h-66 overflow-hidden rounded-lg md:h-96 mt-10">
                 <!-- Item 1 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    <img src="{{asset('images/img1.jpg')}}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
                 </div>
                 <!-- Item 2 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    <img src="{{asset('images/img2.jpg')}}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
                 </div>
                 <!-- Item 3 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    <img src="{{asset('images/img3.jpg')}}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
                 </div>
                 <!-- Item 4 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    <img src="{{asset('images/img4.jpg')}}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
                 </div>
                 <!-- Item 5 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+                    <img src="{{asset('images/img5.jpg')}}" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
                 </div>
             </div>
             <!-- Slider controls -->
@@ -922,53 +922,53 @@
     <section class="bg-white py-20">
 
 
-<div class="flex flex-col justify-center  items-center">
-    <h1 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">Lorem ipsum dolor sit amet.</h1>
-    <p class="w-3/4 m-auto text-center mb-6 text-lg font-normal text-gray-500 lg:text-lg sm:px-16 xl:px-48">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem sint mollitia libero aperiam rem, repellat distinctio sed obcaecati quaerat et!</p>
+        <div class="flex flex-col justify-center  items-center">
+            <h1 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">Lorem ipsum dolor sit amet.</h1>
+            <p class="w-3/4 m-auto text-center mb-6 text-lg font-normal text-gray-500 lg:text-lg sm:px-16 xl:px-48">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem sint mollitia libero aperiam rem, repellat distinctio sed obcaecati quaerat et!</p>
 
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-4/5 m-auto my-5">
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-4/5 m-auto my-5">
 
 
- 
-        <a href="/recit">
-            <div class="rounded-lg h-60		 bg-gray-300 max-w-full  bg-[url('../uploads/')] ">
-                <div class="rounded-lg bg-black opacity-80	 w-full h-full flex justify-center  items-center">
-                    <div class='rounded-lg border-neutral-50 border-solid border-2 w-3/4 h-2/4 hover:border-none flex justify-center  items-center font-black text-xl hover:text-3xl ease-in duration-300	'>
-                        <h1 class="text-white">
-                           Italie
-                        </h1>
 
+            <a href="/recit">
+                <div class="rounded-lg h-60		 bg-gray-300 max-w-full  bg-[url('../uploads/')] ">
+                    <div class="rounded-lg bg-black opacity-80	 w-full h-full flex justify-center  items-center">
+                        <div class='rounded-lg border-neutral-50 border-solid border-2 w-3/4 h-2/4 hover:border-none flex justify-center  items-center font-black text-xl hover:text-3xl ease-in duration-300	'>
+                            <h1 class="text-white">
+                                Italie
+                            </h1>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
 
-        <a href="/recit">
-            <div class="rounded-lg h-60		 bg-gray-300 max-w-full  bg-[url('../uploads/')] ">
-                <div class="rounded-lg bg-black opacity-80	 w-full h-full flex justify-center  items-center">
-                    <div class='rounded-lg border-neutral-50 border-solid border-2 w-3/4 h-2/4 hover:border-none flex justify-center  items-center font-black text-xl hover:text-3xl ease-in duration-300	'>
-                        <h1 class="text-white">
-                           France
-                        </h1>
+            <a href="/recit">
+                <div class="rounded-lg h-60		 bg-gray-300 max-w-full  bg-[url('../uploads/')] ">
+                    <div class="rounded-lg bg-black opacity-80	 w-full h-full flex justify-center  items-center">
+                        <div class='rounded-lg border-neutral-50 border-solid border-2 w-3/4 h-2/4 hover:border-none flex justify-center  items-center font-black text-xl hover:text-3xl ease-in duration-300	'>
+                            <h1 class="text-white">
+                                France
+                            </h1>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
 
-        <a href="/recit">
-            <div class="rounded-lg h-60		 bg-gray-300 max-w-full  bg-[url('../uploads/')] ">
-                <div class="rounded-lg bg-black opacity-80	 w-full h-full flex justify-center  items-center">
-                    <div class='rounded-lg border-neutral-50 border-solid border-2 w-3/4 h-2/4 hover:border-none flex justify-center  items-center font-black text-xl hover:text-3xl ease-in duration-300	'>
-                        <h1 class="text-white">
-                           Espagne
-                        </h1>
+            <a href="/recit">
+                <div class="rounded-lg h-60		 bg-gray-300 max-w-full  bg-[url('../uploads/')] ">
+                    <div class="rounded-lg bg-black opacity-80	 w-full h-full flex justify-center  items-center">
+                        <div class='rounded-lg border-neutral-50 border-solid border-2 w-3/4 h-2/4 hover:border-none flex justify-center  items-center font-black text-xl hover:text-3xl ease-in duration-300	'>
+                            <h1 class="text-white">
+                                Espagne
+                            </h1>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
 
 
 
@@ -978,12 +978,12 @@
 
 
 
-</div>
+        </div>
 
 
 
-</div>
-</section>
+        </div>
+    </section>
 
 
 
